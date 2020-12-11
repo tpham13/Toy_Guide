@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_12_11_012445) do
 
-  create_table "age_range", force: :cascade do |t|
+  create_table "age_ranges", force: :cascade do |t|
     t.string "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -21,12 +21,15 @@ ActiveRecord::Schema.define(version: 2020_12_11_012445) do
   create_table "toys", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.string "development"
-    t.string "area"
+    t.string "development_area"
     t.string "link_to_purchase"
     t.string "image"
+    t.integer "user_id"
+    t.integer "age_range_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["age_range_id"], name: "index_toys_on_age_range_id"
+    t.index ["user_id"], name: "index_toys_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
