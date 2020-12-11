@@ -7,10 +7,7 @@
 - name
 
 2) Age Range
-- birth to one
-- one to two
-- two to three
-- three to five
+- age
 
 3) Toy
 - title 
@@ -30,5 +27,5 @@ Toy
 - belongs_to :age range
 - belongs_to :user
 
-Flow: 
+
 
