@@ -3,11 +3,9 @@ class CreateToys < ActiveRecord::Migration[6.0]
     create_table :toys do |t|
       t.string :title
       t.string :description
-      t.string :development_area
-      t.string :link_to_purchase
-      t.string :image
-      t.belongs_to :user
-      t.belongs_to :age_range
+      t.string :price
+      t.string :purchase_link
+      t.references :category, null: false, foreign_key: true
 
       t.timestamps
     end

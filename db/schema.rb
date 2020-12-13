@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_11_012445) do
+ActiveRecord::Schema.define(version: 2020_12_13_195117) do
 
-  create_table "age_ranges", force: :cascade do |t|
-    t.string "age"
+  create_table "toy_categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -21,21 +21,13 @@ ActiveRecord::Schema.define(version: 2020_12_11_012445) do
   create_table "toys", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.string "development_area"
-    t.string "link_to_purchase"
-    t.string "image"
-    t.integer "user_id"
-    t.integer "age_range_id"
+    t.string "price"
+    t.string "purchase_link"
+    t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["age_range_id"], name: "index_toys_on_age_range_id"
-    t.index ["user_id"], name: "index_toys_on_user_id"
+    t.index ["category_id"], name: "index_toys_on_category_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
+  add_foreign_key "toys", "categories"
 end
