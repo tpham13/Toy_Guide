@@ -46,6 +46,6 @@ class ToysController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def toy_params
-      params.require(:toy).permit(:title, :description, :price, :purchase_link, :category_id)
+      params.require(:toy).permit(:title, :description, :price, :url, :toy_category_id)
     end
 end

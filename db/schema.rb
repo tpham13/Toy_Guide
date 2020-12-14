@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_13_195117) do
+ActiveRecord::Schema.define(version: 2020_12_13_224242) do
 
   create_table "toy_categories", force: :cascade do |t|
     t.string "name"
@@ -20,14 +20,14 @@ ActiveRecord::Schema.define(version: 2020_12_13_195117) do
 
   create_table "toys", force: :cascade do |t|
     t.string "title"
-    t.string "description"
-    t.string "price"
-    t.string "purchase_link"
-    t.integer "category_id", null: false
+    t.text "description"
+    t.float "price"
+    t.string "url"
+    t.integer "toy_category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_toys_on_category_id"
+    t.index ["toy_category_id"], name: "index_toys_on_toy_category_id"
   end
 
-  add_foreign_key "toys", "categories"
+  add_foreign_key "toys", "toy_categories"
 end
