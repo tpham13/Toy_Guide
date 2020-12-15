@@ -68,6 +68,8 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.10.0)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     ffi (1.13.1)
     ffi (1.13.1-java)
     ffi (1.13.1-x64-mingw32)
@@ -231,6 +233,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
+  fast_jsonapi
   json
   jsonapi-resources
   listen (~> 3.2)
