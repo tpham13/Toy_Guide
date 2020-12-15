@@ -2,11 +2,11 @@ class ToysController < ApplicationController
   before_action :set_toy, only: [:show, :update, :destroy]
 
   # GET /toys
-  def index
-    @toys = Toy.all
+  # def index
+  #   @toys = Toy.all
 
-    render json: @toys
-  end
+  #   render json: @toys
+  # end
 
   # GET /toys/1
   def show
@@ -14,15 +14,15 @@ class ToysController < ApplicationController
   end
 
   # POST /toys
-  def create
-    @toy = Toy.new(toy_params)
+  # def create
+  #   @toy = Toy.new(toy_params)
 
-    if @toy.save
-      render json: @toy, status: :created, location: @toy
-    else
-      render json: @toy.errors, status: :unprocessable_entity
-    end
-  end
+  #   if @toy.save
+  #     render json: @toy, status: :created, location: @toy
+  #   else
+  #     render json: @toy.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /toys/1
   def update
@@ -45,7 +45,7 @@ class ToysController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
-    def toy_params
-      params.require(:toy).permit(:title, :description, :price, :url, :toy_category_id)
-    end
+    # def toy_params
+    #   params.require(:toy).permit(:title, :description, :price, :url, :toy_category_id)
+    # end
 end
