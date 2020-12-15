@@ -1,14 +1,14 @@
 class Api::V1::ToyCategoriesController < ApplicationController
-    class ToyCategoriesController < ApplicationController
+
         before_action :set_toy_category, only: [:show, :update, :destroy]
       
         # GET /toy_categories
-        def index
-          @toy_categories = ToyCategory.all
+    def index
+        @toy_categories = ToyCategory.all
       
-        #   render json: @toy_categories
+    #   render json: @toy_categories
         render json: ToyCategorySerializer.new(@toy_categories)
-        end
+    end
       
         # GET /toy_categories/1
         def show
@@ -50,6 +50,6 @@ class Api::V1::ToyCategoriesController < ApplicationController
           def toy_category_params
             params.require(:toy_category).permit(:name)
           end
-      end
+      
       
 end
