@@ -16,11 +16,12 @@ class Api::V1::ToysController < ApplicationController
 
     def create
         @toy = Toy.new(toy_params)
+        # byebug
     
         if @toy.save
-          render json: @toy, status: :accepted
+          render json: ToySerializer.new(@toy), status: :accepted
         else
-          render json: {erros: @toy.errors.full_messages}, status: :unprocessable_entity
+          render json: {errors: @toy.errors.full_messages}, status: :unprocessable_entity
         end
     end
     # GET /toys/1
