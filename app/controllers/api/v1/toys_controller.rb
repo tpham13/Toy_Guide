@@ -26,7 +26,7 @@ class Api::V1::ToysController < ApplicationController
     end
     # GET /toys/1
     def show
-      render json: @toy
+      render json: ToySerializer.find(@toy)
     end
     # PATCH/PUT /toys/1
     def update
