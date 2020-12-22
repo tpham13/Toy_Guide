@@ -1,4 +1,4 @@
 class ToyCategory < ApplicationRecord
     has_many :toys 
-    validates :title, presence: true
+    validates :name, presence: true
 end
