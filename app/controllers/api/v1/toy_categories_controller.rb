@@ -1,6 +1,6 @@
 class Api::V1::ToyCategoriesController < ApplicationController
 
-        before_action :set_toy_category, only: [:show, :update, :destroy]
+        before_action :set_toy_category, only: [:show]
       
         # GET /toy_categories
     def index
@@ -26,19 +26,6 @@ class Api::V1::ToyCategoriesController < ApplicationController
           end
         end
       
-        # PATCH/PUT /toy_categories/1
-        def update
-          if @toy_category.update(toy_category_params)
-            render json: @toy_category
-          else
-            render json: @toy_category.errors, status: :unprocessable_entity
-          end
-        end
-      
-        # DELETE /toy_categories/1
-        def destroy
-          @toy_category.destroy
-        end
       
         private
           # Use callbacks to share common setup or constraints between actions.

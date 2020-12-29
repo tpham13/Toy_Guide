@@ -1,7 +1,17 @@
 # README
 Toy Guide App Front End link: https://github.com/tpham13/toy_guide_frontend
-This README would normally document whatever steps are necessary to get the
-application up and running.
+
+Toy Guide App 
+has a Rails back end api
+
+Front-end-client side: 
+- index.html => single page app
+- src: 
+    - index.js => top-level js file (where the js starts running)
+    - toy.js => class
+    - category.js => class 
+    
+
 
 Things you may want to cover:
 

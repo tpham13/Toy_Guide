@@ -1,31 +1,26 @@
 # User story: 
--User is able see a list of toys for children in age range 0-1, 1-2, 2-3, 3-5. 
--User is also able to add the toys to the recommended list 
+-User is able see a list of toys for children in categories: birth to one, learning and school, puzzle
+-User is also able to add the toys to each category
 
 ## Models: 
-1) User
-- name
 
-2) Age Range
-- age
-
-3) Toy
+1) Toy
 - title 
 - description
-- development areas 
-- link to purchase
-- image
+- price
+- url
+- toy_category_id
+
+
+2) Toy Category
+- name
 
 ### Association: 
-User 
-- has_many toys
-
-Age range
-- has_many toys 
-
 Toy
-- belongs_to :age range
-- belongs_to :user
+- belongs_to :toy_category
+
+Toy Category
+- has_many :toys
 
 
 
