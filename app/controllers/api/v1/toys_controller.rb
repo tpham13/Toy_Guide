@@ -2,7 +2,7 @@ class Api::V1::ToysController < ApplicationController
   before_action :set_toy, only: [:show, :update, :destroy]
 
     def index
-        @toys = Toy.all
+        toys = Toy.all
         #the next line of code is if we only want to show the data structure for toys
           # render json: @toys
         #this next line of codes is if we want to show the toys and its association with toy_category (and toy_category attributes).This will specify "relationship:"
@@ -11,7 +11,7 @@ class Api::V1::ToysController < ApplicationController
           # }
           # render json: ToySerializer.new(@toys, @options)
         #to keep things simple, we'll just going to show toys and its association to toy_category(with toy_category attributes). This will not specify "relationship:"
-        render json: ToySerializer.new(@toys)
+        render json: ToySerializer.new(toys)
     end
 
     def create

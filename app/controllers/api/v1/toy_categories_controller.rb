@@ -5,8 +5,6 @@ class Api::V1::ToyCategoriesController < ApplicationController
         # GET /toy_categories
     def index
         @toy_categories = ToyCategory.all
-      
-    #   render json: @toy_categories
         render json: ToyCategorySerializer.new(@toy_categories)
     end
       
