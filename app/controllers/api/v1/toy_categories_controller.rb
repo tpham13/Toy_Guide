@@ -5,7 +5,7 @@ class Api::V1::ToyCategoriesController < ApplicationController
         # GET /toy_categories
     def index
         @toy_categories = ToyCategory.all
-        render json: ToyCategorySerializer.new(@toy_categories)
+        render json: ToyCategorySerializer.new(@toy_categories).serializable_hash[:data].map{|hash| hash[:attributes]}
     end
       
         # GET /toy_categories/1
@@ -20,7 +20,7 @@ class Api::V1::ToyCategoriesController < ApplicationController
           if @toy_category.save
             render json: @toy_category, status: :created, location: @toy_category
           else
-            render json: @toy_category.errors, status: :unprocessable_entity
+            render json: @toy_category.errors.full_messages.to_sentence, status: :unprocessable_entity
           end
         end
       

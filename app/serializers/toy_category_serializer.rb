@@ -1,5 +1,5 @@
 class ToyCategorySerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name
+  attributes :id, :name
   
 end
