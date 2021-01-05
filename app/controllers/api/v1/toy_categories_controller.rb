@@ -10,7 +10,12 @@ class Api::V1::ToyCategoriesController < ApplicationController
       
     # GET /toy_categories/1
     def show
-      render json: ToyCategorySerializer.new(@toy_category)
+      # byebug
+      render json: { 
+          id: params[:id],
+          toysAttributes: ToyCategorySerializer.new(@toy_category, include: [:toys]).serializable_hash[:included].map{|hash| hash[:attributes]}
+      }
+      # render json: @toy_category
     end
       
     # POST /toy_categories
