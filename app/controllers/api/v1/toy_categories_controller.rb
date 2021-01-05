@@ -8,21 +8,22 @@ class Api::V1::ToyCategoriesController < ApplicationController
         render json: ToyCategorySerializer.new(@toy_categories).serializable_hash[:data].map{|hash| hash[:attributes]}
     end
       
-        # GET /toy_categories/1
-        def show
-          render json: @toy_category
-        end
+    # GET /toy_categories/1
+    def show
+      render json: ToyCategorySerializer.new(@toy_category)
+    end
       
-        # POST /toy_categories
-        def create
-          @toy_category = ToyCategory.new(toy_category_params)
+    # POST /toy_categories
+    def create
+      @toy_category = ToyCategory.new(toy_category_params)
       
-          if @toy_category.save
-            render json: @toy_category, status: :created, location: @toy_category
-          else
-            render json: @toy_category.errors.full_messages.to_sentence, status: :unprocessable_entity
-          end
-        end
+      if @toy_category.save
+        render json: ToyCategorySerializer.new(@toy_category)
+        # status: :created, location: @toy_category
+      else
+        render json: @toy_category.errors.full_messages.to_sentence, status: :unprocessable_entity
+      end
+    end
       
       
         private
