@@ -16,12 +16,12 @@ class Api::V1::ToysController < ApplicationController
 
     def create
         @toy = Toy.new(toy_params)
-        # byebug
+        byebug
     
         if @toy.save
-          render json: ToySerializer.new(@toy), status: :accepted
+          render json: ToySerializer.new(@toy).serializable_hash[:data].map{|hash| hash[:attributes]}
         else
-          render json: {errors: @toy.errors.full_messages}, status: :unprocessable_entity
+          render json: {errors: @toy.errors.full_messages.to_sentence}, status: :unprocessable_entity
         end
     end
     # GET /toys/1
