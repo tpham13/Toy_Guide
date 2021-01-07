@@ -15,7 +15,6 @@ class Api::V1::ToyCategoriesController < ApplicationController
           id: params[:id],
           toysAttributes: ToyCategorySerializer.new(@toy_category, include: [:toys]).serializable_hash[:included].map{|hash| hash[:attributes]}
       }
-      # render json: @toy_category
     end
       
     # POST /toy_categories
