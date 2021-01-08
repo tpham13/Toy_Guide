@@ -23,23 +23,23 @@ class Api::V1::ToysController < ApplicationController
           render json: {errors: @toy.errors.full_messages.to_sentence}, status: :unprocessable_entity
         end
     end
-    # GET /toys/1
-    def show
-      render json: ToySerializer.find(@toy)
-    end
+    # # GET /toys/1
+    # def show
+    #   render json: ToySerializer.find(@toy)
+    # end
     # PATCH/PUT /toys/1
-    def update
-      if @toy.update(toy_params)
-        render json: @toy
-      else
-        render json: @toy.errors, status: :unprocessable_entity
-      end
-    end
+    # def update
+    #   if @toy.update(toy_params)
+    #     render json: @toy
+    #   else
+    #     render json: @toy.errors, status: :unprocessable_entity
+    #   end
+    # end
 
     # DELETE /toys/1
-    def destroy
-      @toy.destroy
-    end
+    # def destroy
+    #   @toy.destroy
+    # end
     private
 
     def set_toy
