@@ -17,7 +17,6 @@ class Api::V1::ToysController < ApplicationController
     def create
         @toy = Toy.new(toy_params)
         # byebug
-    
         if @toy.save
           render json: ToySerializer.new(@toy).serializable_hash[:data][:attributes]
         else
