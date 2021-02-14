@@ -1,38 +1,16 @@
-# README
+# TOY GUIDE
 Toy Guide App Front End link: https://github.com/tpham13/toy_guide_frontend
 
-Toy Guide App 
-1. toy guide back-end
-2. toy guide front-end: 
-    - index.html => single page app
-    - src: 
-        - index.js => top-level js file (where the js starts running)
-        - toy.js => class
-        - category.js => class 
-        - form.js => class
+# Purpose
 
-AJAX Request: 
-1.  get/toys (this will return the associated categories)
-2.  delete/toys/:id
-3.  post/toys
+Toy Guide allows users to select age appropriate toys for their children. 
 
 
-Things you may want to cover:
+# Ruby version
+2.7.0
 
-* Ruby version
+# Clone the Repository
 
-* System dependencies
+https://github.com/tpham13/Toy_Guide_Backend.git
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
